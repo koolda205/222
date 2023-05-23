@@ -1,14 +1,13 @@
-package Service;
+package dao;
 
 import model.Car;
 
 import java.util.List;
 
-public interface CarService {
+public interface CarDao {
 
     List<Car> index();
 
     Car show(int id);
 
 }
-
