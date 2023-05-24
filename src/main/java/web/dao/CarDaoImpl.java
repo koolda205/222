@@ -15,7 +15,7 @@ public class CarDaoImpl implements CarDao {
     }
 
     @Override
-    public Car show(int id) {
+    public Car show(Long id) {
         return cars.stream().filter(cars -> cars.getId() == id).findAny().orElse(null);
     }
 

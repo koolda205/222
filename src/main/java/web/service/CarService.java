@@ -8,7 +8,7 @@ public interface CarService {
 
     List<Car> index();
 
-    Car show(int id);
+    Car show(Long id);
 
 }
 

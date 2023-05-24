@@ -23,7 +23,7 @@ public class CarsController {
 	}
 
 	@GetMapping("/{id}")
-	public String show (@PathVariable("id") int id, Model model) {
+	public String show (@PathVariable("id") Long id, Model model) {
 		model.addAttribute("cars", carDao.show(id));
 		return "cars/show";
 	}

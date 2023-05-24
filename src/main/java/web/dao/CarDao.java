@@ -8,6 +8,6 @@ public interface CarDao {
 
     List<Car> index();
 
-    Car show(int id);
+    Car show(Long id);
 
 }

@@ -20,7 +20,7 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public Car show(int id) {
+    public Car show(Long id) {
        return carDao.show(id);
     }
 
