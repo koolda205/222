@@ -19,13 +19,13 @@ public class CarsController {
 	@GetMapping()
 	public String index (Model model) {
 		model.addAttribute("cars", carDao.index());
-		return "cars/index";
+		return "cars";
 	}
 
 	@GetMapping("/{id}")
 	public String show (@PathVariable("id") Long id, Model model) {
 		model.addAttribute("cars", carDao.show(id));
-		return "cars/show";
+		return "cars";
 	}
 
 }
