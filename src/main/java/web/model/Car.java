@@ -1,4 +1,4 @@
-package model;
+package web.model;
 
 
 import java.util.Objects;
@@ -50,7 +50,7 @@ public class Car {
     public String toString() {
         return "Car{" +
                 "id=" + id +
-                ", model='" + model + '\'' +
+                ", web.model='" + model + '\'' +
                 ", series=" + series +
                 '}';
     }

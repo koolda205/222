@@ -1,10 +1,8 @@
-package Service;
+package web.service;
 
-import dao.CarDao;
-import hiber.model.Car;
-import model.Car;
+import web.dao.CarDao;
+import web.model.Car;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
