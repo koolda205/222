@@ -21,11 +21,4 @@ public class HelloController {
 		return "index";
 	}
 
-	@GetMapping(value = "/exit")
-	public String exit(ModelMap model) {
-		String message = "No more link";
-		model.addAttribute("messages", message);
-		return "index";
-	}
-
 }
