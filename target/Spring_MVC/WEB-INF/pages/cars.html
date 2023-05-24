@@ -6,29 +6,24 @@
     <title></title>
 </head>
 <body>
-<div>
-    <th:block th:each="car : ${cars}">
-        <h1 th:text="${car}"></h1>
-    </th:block>
-</div>
+<!--<div>-->
+<!--    <th:block th:each="car : ${cars}">-->
+<!--        <h1 th:text="${car}"></h1>-->
+<!--    </th:block>-->
+<!--</div>-->
 
 <table th:border="1" th:width="500" th:high="300" bg th:color="blue">
     <caption>Cars</caption>
-<!--    <tr>-->
-<!--        <th></th>-->
-<!--        <th>id</th>-->
-<!--        <th>series</th>-->
-<!--    </tr>-->
-    <tr th:each="car : ${cars}">
-        <td><td th:utext="${car.getId()}"></td>
-        <td><td th:utext="${car.getModel()}"></td>
-        <td><td th:utext="${car.getSeries()}"></td>
+    <tr>
+        <th>Id</th>
+        <th>Model</th>
+        <th>Series</th>
     </tr>
-<!--    <tr th:each="car : ${cars}">-->
-<!--        <td th:utext="${car.getId()}"></td>-->
-<!--        <td th:utext="${car.getModel()}"></td>-->
-<!--        <td th:utext="${car.getSeries()}"></td>-->
-<!--    </tr>-->
+    <tr th:each="car : ${cars}">
+        <td th:utext="${car.getId()}">
+        <td th:utext="${car.getModel()}">
+        <td th:utext="${car.getSeries()}">
+    </tr>
 </table>
 
 Home page:
