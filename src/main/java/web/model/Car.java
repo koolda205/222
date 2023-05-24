@@ -51,7 +51,7 @@ public class Car {
     public String toString() {
         return "Car{" +
                 "id=" + id +
-                ", web.model='" + model + '\'' +
+                ", model='" + model + '\'' +
                 ", series=" + series +
                 '}';
     }
