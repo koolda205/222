@@ -5,12 +5,9 @@ import java.util.Objects;
 
 public class Car {
 
-
     private Long id;
 
-
     private String model;
-
 
     private int series;
 
@@ -43,7 +40,7 @@ public class Car {
         this.series = series;
     }
 
-    public int getSeries(int carSeries) {
+    public int getSeries() {
         return series;
     }
 
