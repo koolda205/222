@@ -15,7 +15,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/cars")
 public class CarsController {
-    @GetMapping(value = "/all")
+
+    @GetMapping()
+//    @GetMapping(value = "/cars")
     public String printWelcome(ModelMap model) {
         List<Car> cars = new ArrayList<>();
             cars.add(new Car(1L, "Lada1", 1));
