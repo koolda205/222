@@ -18,7 +18,7 @@ public class CarsController {
 		this.carDao = carDao;
 	}
 
-	@GetMapping("cars")
+	@GetMapping("/cars")
 	public String index (Model model) {
 		model.addAttribute("cars", carDao.index());
 		return "cars";
