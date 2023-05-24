@@ -14,7 +14,7 @@ import java.util.List;
 @Controller
 //@RequestMapping("/cars)"
 public class CarsController {
-    @GetMapping(value = "/")
+    @GetMapping(value = "/cars")
     public String printWelcome(ModelMap model) {
         List<Car> cars = new ArrayList<>();
             cars.add(new Car(1L, "Lada1", 1));
@@ -26,6 +26,7 @@ public class CarsController {
             model.addAttribute("cars", cars);
             return "cars";
     }
+}
 
 //    @GetMapping("/hello")
 //    public String sayHello(){
@@ -45,4 +46,4 @@ public class CarsController {
 //	}
 //
 
-}
+//}
