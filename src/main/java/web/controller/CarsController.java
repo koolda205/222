@@ -17,30 +17,34 @@ import java.util.List;
 @RequestMapping("/cars")
 public class CarsController {
 
-    private List<Car> cars = new ArrayList<>();
+    private List<Car> carsList = new ArrayList<>();
     private static Long count = 0L;
 
     {
-        cars.add(new Car(++count, "Lada1", 1));
-        cars.add(new Car(++count, "Lada2", 2));
-        cars.add(new Car(++count, "Lada3", 3));
-        cars.add(new Car(++count, "Lada4", 4));
-        cars.add(new Car(++count, "Lada5", 5));
+        carsList.add(new Car(++count, "Lada1", 1));
+        carsList.add(new Car(++count, "Lada2", 2));
+        carsList.add(new Car(++count, "Lada3", 3));
+        carsList.add(new Car(++count, "Lada4", 4));
+        carsList.add(new Car(++count, "Lada5", 5));
     }
 
-//    @GetMapping()
-//    public String printWelcome(@RequestParam(value = "count", required = false) Long count,
-//                               ModelMap modelMap) {
-//        this.count = (Long) count;
-//        if (count == null || count >= 5) {
-//            modelMap.addAttribute("cars", cars);
-//        } else {
-//            for (int i = 0; i <= count; i++)
-//                modelMap.addAttribute("cars", cars.get(i));
-//        }
-//        return "cars";
-//    }
-//}
+    @GetMapping()
+    public String printWelcome(@RequestParam(value = "count", required = false) Long count,
+                               ModelMap modelMap) {
+        List<Car> cars = carsList;
+        this.count = (Long) count;
+        if (count >= 1 && count <= 5) {
+            for (int i = 0; i < count; i++)
+                cars.add(carsList.get(i));
+            modelMap.addAttribute("cars", cars);
+        } else if (count == null || count < 0 || count > 5) {
+            cars.add((Car) carsList);
+            modelMap.addAttribute("cars", cars);
+        }
+
+        return "cars";
+    }
+}
 
 
 //    @GetMapping()
@@ -52,13 +56,13 @@ public class CarsController {
 //    }
 //}
 
-    @GetMapping()
-//    @GetMapping(value = "/cars")
-    public String printWelcome(ModelMap model) {
-        model.addAttribute("cars", cars);
-        return "cars";
-    }
-}
+//    @GetMapping()
+////    @GetMapping(value = "/cars")
+//    public String printWelcome(ModelMap model) {
+//        model.addAttribute("cars", cars);
+//        return "cars";
+//    }
+//}
 
 //	@GetMapping("/cars")
 //	public String index (Model model) {
