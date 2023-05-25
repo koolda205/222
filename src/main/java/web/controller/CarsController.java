@@ -18,7 +18,7 @@ import java.util.List;
 public class CarsController {
 
     private List<Car> cars = new ArrayList<>();
-    private static Long count;
+    private static Long count = 0L;
 
     {
         cars.add(new Car(++count, "Lada1", 1));
