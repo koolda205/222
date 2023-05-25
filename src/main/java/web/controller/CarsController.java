@@ -17,15 +17,30 @@ import java.util.List;
 @RequestMapping("/cars")
 public class CarsController {
 
-    List<Car> cars = new ArrayList<>();
+    private List<Car> cars = new ArrayList<>();
+    private static Long count;
 
     {
-        cars.add(new Car(1L, "Lada1", 1));
-        cars.add(new Car(2L, "Lada2", 2));
-        cars.add(new Car(3L, "Lada3", 3));
-        cars.add(new Car(4L, "Lada4", 4));
-        cars.add(new Car(5L, "Lada5", 5));
+        cars.add(new Car(++count, "Lada1", 1));
+        cars.add(new Car(++count, "Lada2", 2));
+        cars.add(new Car(++count, "Lada3", 3));
+        cars.add(new Car(++count, "Lada4", 4));
+        cars.add(new Car(++count, "Lada5", 5));
     }
+
+//    @GetMapping()
+//    public String printWelcome(@RequestParam(value = "count", required = false) Long count,
+//                               ModelMap modelMap) {
+//        this.count = (Long) count;
+//        if (count == null || count >= 5) {
+//            modelMap.addAttribute("cars", cars);
+//        } else {
+//            for (int i = 0; i <= count; i++)
+//                modelMap.addAttribute("cars", cars.get(i));
+//        }
+//        return "cars";
+//    }
+//}
 
 
 //    @GetMapping()
