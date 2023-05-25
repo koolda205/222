@@ -19,13 +19,12 @@ public class CarServiceImpl implements CarService {
         List<Car> cars2 = new ArrayList<>();
         if (count == null || count <= 0 || count > 5) {
             return cars;
-        } else if (count >= 1 && count <= 5) {
+        } else {
             for (int i = 0; i < count; i++) {
                 cars2.add(cars.get(i));
             }
-            return cars2;
         }
-        return cars;
+        return cars2;
     }
 }
 
