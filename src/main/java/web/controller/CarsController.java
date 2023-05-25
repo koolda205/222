@@ -1,11 +1,8 @@
 package web.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import web.model.Car;
@@ -31,12 +28,12 @@ public class CarsController {
     @GetMapping()
     public String printWelcome(@RequestParam(value = "count", required = false) Long count,
                                ModelMap modelMap) {
-        ArrayList<Car>cars = (ArrayList<Car>) carsList;
-        this.count = (Long) count;
+        ArrayList<Car> cars = (ArrayList<Car>) carsList;
+        this.count = count;
         if (count == null || count <= 0 || count > 5) {
             modelMap.addAttribute("cars", cars);
         } else if (count >= 1 && count <= 5) {
-            ArrayList<Car>cars2 = new ArrayList<>();
+            ArrayList<Car> cars2 = new ArrayList<>();
             for (int i = 0; i < count; i++) {
                 cars2.add(cars.get(i));
                 modelMap.addAttribute("cars", cars2);
@@ -45,47 +42,5 @@ public class CarsController {
         return "cars";
     }
 }
-//    List<Car> cars = carsList;
-//        this.count = (Long) count;
-//                if (count >= 1 && count <= 5) {
-//                for (int i = 0; i < count; i++)
-//        cars.add(carsList.get(i));
-//        modelMap.addAttribute("cars", cars);
-//        } else if (count == null || count < 0 || count > 5) {
-//        cars.add((Car) carsList);
-//        modelMap.addAttribute("cars", cars);
-//        }
-//
-//        return "cars";
-//        }
 
-//    @GetMapping()
-//    public String printWelcome(@RequestParam(value = "model", required = false) String model,
-//                               @RequestParam(value = "series", required = false) int series,
-//                               ModelMap modelMap) {
-//        modelMap.addAttribute("cars", cars);
-//        return "cars";
-//    }
-//}
-
-//    @GetMapping()
-////    @GetMapping(value = "/cars")
-//    public String printWelcome(ModelMap model) {
-//        model.addAttribute("cars", cars);
-//        return "cars";
-//    }
-//}
-
-//	@GetMapping("/cars")
-//	public String index (Model model) {
-//		model.addAttribute("cars", carDao.index());
-//		return "cars";
-//	}
-//
-//	@GetMapping("/{id}")
-//	public String show (@PathVariable("id") Long id, Model model) {
-//		model.addAttribute("cars", carDao.show(id));
-//		return "cars";
-//	}
-//
 
