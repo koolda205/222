@@ -31,21 +31,33 @@ public class CarsController {
     @GetMapping()
     public String printWelcome(@RequestParam(value = "count", required = false) Long count,
                                ModelMap modelMap) {
-        List<Car> cars = carsList;
+        ArrayList<Car>cars = (ArrayList<Car>) carsList;
         this.count = (Long) count;
-        if (count >= 1 && count <= 5) {
-            for (int i = 0; i < count; i++)
-                cars.add(carsList.get(i));
+        if (count == null || count <= 0 || count > 5) {
             modelMap.addAttribute("cars", cars);
-        } else if (count == null || count < 0 || count > 5) {
-            cars.add((Car) carsList);
-            modelMap.addAttribute("cars", cars);
+        } else if (count >= 1 && count <= 5) {
+            ArrayList<Car>cars2 = new ArrayList<>();
+            for (int i = 0; i < count; i++) {
+                cars2.add(cars.get(i));
+                modelMap.addAttribute("cars", cars2);
+            }
         }
-
         return "cars";
     }
 }
-
+//    List<Car> cars = carsList;
+//        this.count = (Long) count;
+//                if (count >= 1 && count <= 5) {
+//                for (int i = 0; i < count; i++)
+//        cars.add(carsList.get(i));
+//        modelMap.addAttribute("cars", cars);
+//        } else if (count == null || count < 0 || count > 5) {
+//        cars.add((Car) carsList);
+//        modelMap.addAttribute("cars", cars);
+//        }
+//
+//        return "cars";
+//        }
 
 //    @GetMapping()
 //    public String printWelcome(@RequestParam(value = "model", required = false) String model,
